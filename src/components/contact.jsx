@@ -1,6 +1,12 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import React from "react";
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
 const initialState = {
   name: "",
@@ -9,6 +15,11 @@ const initialState = {
 };
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
+  const [checked, setChecked] = React.useState(true);
+
+  const handleCheck = (event) => {
+    setChecked(event.target.checked);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -103,7 +114,47 @@ export const Contact = (props) => {
                   <p className="help-block text-danger"></p>
                 </div>
                 <div className="flex">
-                  <checkbox></checkbox>
+                  <FormControlLabel
+                    label="I am currently a Medicare or Medicare Advantage member"
+                    control={
+                      <Checkbox
+                        checked={checked}
+                        onChange={handleCheck}
+                        sx={{ 
+                          transform: 'scale(1.5)', // Resize the checkbox
+                        }}
+                        color="default"
+                      />
+                    }
+                    sx={{
+                      '.MuiFormControlLabel-label': {
+                        fontSize: '18px', // Change label font size
+                      },
+                    }}
+                  />
+                </div>
+                <div className="mb-5">
+                  <FormControl>
+                    <FormLabel id="demo-row-radio-buttons-group-label"
+                      sx={{ fontSize: '18px', color: 'white' }}
+                    >
+                      I would like more information and I would like to be contacted by (Choose One):
+                    </FormLabel>
+                    <div className="ml-[127px]">
+                      <RadioGroup
+                        row
+                        aria-labelledby="demo-row-radio-buttons-group-label"
+                        name="row-radio-buttons-group"
+                        sx={{ 
+                          transform: 'scale(1.5)', // Resize the checkbox
+                        }}
+                        color="default"
+                      >
+                        <FormControlLabel value="email" control={<Radio />} label="Email" />
+                        <FormControlLabel value="phone" control={<Radio />} label="Phone" />
+                      </RadioGroup>
+                    </div>
+                  </FormControl>
                 </div>
                 <div className="form-group">
                   <textarea
@@ -114,6 +165,7 @@ export const Contact = (props) => {
                     placeholder="Message"
                     required
                     onChange={handleChange}
+                    maxLength={255}
                   ></textarea>
                   <p className="help-block text-danger"></p>
                 </div>
