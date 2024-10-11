@@ -57,8 +57,8 @@ export const Contact = (props) => {
           <div className="col-md-8">
             <div className="row">
               <div className="section-title">
-                <h2>Contact Us</h2>
-                <p>
+                <h2 className="text-[17px]">Contact Us</h2>
+                <p className="text-[18px]">
                   Today and one of our clinical team will respond to you right away and answer your questions.
                 </p>
               </div>
@@ -182,7 +182,7 @@ export const Contact = (props) => {
           </div>
           <div className="col-md-3 col-md-offset-1 contact-info">
             <div className="contact-item">
-              <h3>Contact Info</h3>
+              <h3 className="text-[17px] font-bold">Contact Info</h3>
               <p>
                 <span>
                   <i className="fa fa-map-marker"></i> Address

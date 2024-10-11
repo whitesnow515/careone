@@ -5,7 +5,7 @@ export const Testimonials = (props) => {
     <div id="testimonials">
       <div className="container">
         <div className="section-title text-center">
-          <h2>What our patients say</h2>
+          <h2 className="text-[17px]">What our patients say</h2>
         </div>
         <div className="row">
           {props.data
@@ -17,7 +17,7 @@ export const Testimonials = (props) => {
                       <img src={d.img} alt="" />{" "}
                     </div>
                     <div className="testimonial-content">
-                      <p>"{d.text}"</p>
+                      <p className="text-[17px]">"{d.text}"</p>
                       <div className="testimonial-meta"> - {d.name} </div>
                     </div>
                   </div>
