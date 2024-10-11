@@ -9,13 +9,15 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
 const initialState = {
-  name: "",
-  email: "",
+  first_name: "",
+  last_name: "",
+  email_address: "",
+  phone_number: "",
   message: "",
 };
 export const Contact = (props) => {
-  const [{ name, email, message }, setState] = useState(initialState);
-  const [checked, setChecked] = React.useState(true);
+  const [{ first_name, last_name, email_address, phone_number, message }, setState] = useState(initialState);
+  const [checked, setChecked] = React.useState(false);
 
   const handleCheck = (event) => {
     setChecked(event.target.checked);
@@ -30,21 +32,23 @@ export const Contact = (props) => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, email, message);
+    console.log(first_name, last_name, email_address, phone_number, message);    
     
-    {/* replace below with your own Service ID, Template ID and Public Key from your EmailJS account */ }
-    
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_PUBLIC_KEY")
-      .then(
-        (result) => {
-          console.log(result.text);
-          clearState();
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.send('service_1qz6r98', 'template_ftqv0s1', {
+      to_name: 'CareOne Concierge',
+      from_name: 'Patients',
+      message_html: `
+        <h1>Welcome to Our Service!</h1>
+        <p>We're glad to have you onboard. This email will never change!</p>
+      `,
+      reply_to: 'flydev515@gmail.com',
+    }, '2FaN7pA8DkiC9oU9r')
+    .then((result) => {
+      console.log('Email sent:', result.text);
+    }, (error) => {
+      console.log('Error:', error.text);
+    });
+
   };
   return (
     <div>
@@ -170,7 +174,7 @@ export const Contact = (props) => {
                   <p className="help-block text-danger"></p>
                 </div>
                 <div id="success"></div>
-                <button type="submit" className="btn btn-custom btn-lg">
+                <button type="submit" className="btn btn-custom btn-lg" disabled={!checked}>
                   Send Message
                 </button>
               </form>
