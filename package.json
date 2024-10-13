@@ -1,6 +1,7 @@
 {
-  "name": "landingpage-react-template",
+  "name": "BestYears4Me",
   "private": true,
+  "homepage": "/web-patients", 
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
