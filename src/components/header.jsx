@@ -20,7 +20,7 @@ export const Header = (props) => {
                   href="#features"
                   className="btn btn-custom btn-lg page-scroll"
                 >
-                  Detail More
+                  More Detail
                 </a>{" "}
               </div>
             </div>
