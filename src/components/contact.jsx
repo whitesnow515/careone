@@ -476,7 +476,6 @@ export const Contact = (props) => {
                     className="form-control"
                     rows="4"
                     placeholder="Message"
-                    required
                     onChange={handleChange}
                     maxLength={255}
                   ></textarea>
@@ -532,7 +531,7 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-envelope-o"></i> Email
                 </span>{" "}
-                {props.data ? props.data.email : "loading"}
+                <a href="mailto:info@careone-concierge.com">{props.data ? props.data.email : "loading"}</a>
               </p>
             </div>
           </div>
