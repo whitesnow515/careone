@@ -1,5 +1,6 @@
 {
   "name": "BestYears4Me",
+  "homepage": "web-patients",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -11,7 +12,6 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^1.7.7",
     "emailjs-com": "^3.2.0",
-    "fetch": "^1.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "^5.0.1",
