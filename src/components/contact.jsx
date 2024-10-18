@@ -95,6 +95,7 @@ export const Contact = (props) => {
     }, 'CXpMtCeRuYT0VXv2a')
     .then((result) => {
       alert("Sent successfully !");
+      setState({...initialState});
     }, (error) => {
       alert('Error:', error.text);
       console.log('Error:', error.text);
@@ -375,6 +376,7 @@ export const Contact = (props) => {
                         name="first_name"
                         className="form-control"
                         placeholder="First Name"
+                        value={first_name}
                         required
                         onChange={handleChange}
                       />
@@ -387,6 +389,7 @@ export const Contact = (props) => {
                         type="text"
                         id="last_name"
                         name="last_name"
+                        value={last_name}
                         className="form-control"
                         placeholder="Last Name"
                         required
@@ -402,6 +405,7 @@ export const Contact = (props) => {
                     id="email_address"
                     name="email_address"
                     className="form-control"
+                    value={email_address}
                     placeholder="Email Address"
                     required
                     onChange={handleChange}
@@ -414,6 +418,7 @@ export const Contact = (props) => {
                     id="phone_number"
                     name="phone_number"
                     className="form-control"
+                    value={phone_number}
                     placeholder="Phone Number"
                     required
                     onChange={handleChange}
@@ -470,6 +475,7 @@ export const Contact = (props) => {
                     className="form-control"
                     rows="4"
                     placeholder="Message"
+                    value={message}
                     onChange={handleChange}
                     maxLength={255}
                   ></textarea>
