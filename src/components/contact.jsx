@@ -90,15 +90,9 @@ export const Contact = (props) => {
     }  
     requestData();
     
-    emailjs.send('service_1qz6r98', 'template_ftqv0s1', {
-      to_name: 'CareOne Concierge',
-      from_name: 'Patients',
-      message_html: `
-        <h1>Welcome to Our Service!</h1>
-        <p>We're glad to have you onboard. This email will never change!</p>
-      `,
-      reply_to: 'flydev515@gmail.com',
-    }, '2FaN7pA8DkiC9oU9r')
+    emailjs.send('service_jqr774k', 'template_7gg2vl9', {
+      first_name, last_name, email_address, phone_number, message
+    }, 'CXpMtCeRuYT0VXv2a')
     .then((result) => {
       console.log('Email sent:', result.text);
     }, (error) => {
