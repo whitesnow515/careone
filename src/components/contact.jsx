@@ -94,7 +94,7 @@ export const Contact = (props) => {
       first_name, last_name, email_address, phone_number, message
     }, 'CXpMtCeRuYT0VXv2a')
     .then((result) => {
-      console.log('Email sent:', result.text);
+      alert("Sent successfully !");
     }, (error) => {
       alert('Error:', error.text);
       console.log('Error:', error.text);
@@ -477,7 +477,7 @@ export const Contact = (props) => {
                 </div>
                 <div className="flex">
                   <FormControlLabel
-                    label="Contact Us"
+                    label="Consent"
                     control={
                       <Checkbox
                         checked={contact}
