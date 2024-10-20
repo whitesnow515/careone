@@ -62,7 +62,7 @@ export const Contact = (props) => {
 
   const requestData = async () => {
     try {
-      const response = await axios.post('http://welltrackone.com/api/saveData', 
+      const response = await axios.post('https://welltrackone.com/api/saveData', 
         {
           firstName: first_name, lastName: last_name, email: email_address, phone: phone_number, message
         }
