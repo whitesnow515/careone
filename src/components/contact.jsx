@@ -32,6 +32,11 @@ export const Contact = (props) => {
   const [checked, setChecked] = React.useState(false);
   const [contact, setContact] = useState(false);
   const [open, setOpen] = React.useState(false);
+  const [value, setValue] = useState('');
+
+  const handleOption = (event) => {
+    setValue(event.target.value);
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -75,7 +80,6 @@ export const Contact = (props) => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(first_name, last_name, email_address, phone_number, message);  
     if (last_name === "" ) {
       alert("Last Name is required !");
       return;
@@ -96,6 +100,9 @@ export const Contact = (props) => {
     .then((result) => {
       alert("Sent successfully !");
       setState({...initialState});
+      setChecked(false);
+      setContact(false);
+      setValue('');
     }, (error) => {
       alert('Error:', error.text);
       console.log('Error:', error.text);
@@ -460,6 +467,8 @@ export const Contact = (props) => {
                         sx={{ 
                           transform: 'scale(1.5)', // Resize the checkbox
                         }}
+                        value={value} 
+                        onChange={handleOption}
                         color="default"
                       >
                         <FormControlLabel value="email" control={<Radio />} label="Email" />
