@@ -16,12 +16,6 @@ export const Header = (props) => {
                   You deserve to stay as healthy as possible.
                 </p>
                 <p>{props.data ? props.data.paragraph : "Loading"}</p>
-                <a
-                  href="#features"
-                  className="btn btn-custom btn-lg page-scroll"
-                >
-                  More Detail
-                </a>{" "}
               </div>
             </div>
           </div>
