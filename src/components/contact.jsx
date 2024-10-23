@@ -67,7 +67,7 @@ export const Contact = (props) => {
 
   const requestData = async () => {
     try {
-      const response = await axios.post('http://www.careone-brokers.com:8080/api/saveData', 
+      const response = await axios.post('https://careone-backend.com/api/saveData', 
         {
           firstName: first_name, lastName: last_name, email: email_address, phone: phone_number, message
         }
